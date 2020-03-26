@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -117,26 +117,16 @@ var Items;
         'item_orchid',
         'item_medallion_of_courage',
         'item_hand_of_midas',
-        'item_aegis',
-        'item_cheese',
-        'item_tango',
-        'item_clarity',
-        'item_flask',
-        'item_faerie_fire',
-        'item_dust',
-        'item_tome_of_knowledge',
-        'item_enchanted_mango',
-        'item_smoke_of_deceit' // 20
     ];
-    Items.mapitems = new Map();
-    Items.mapitems.set('item_tango', -1);
-    Items.mapitems.set('item_clarity', -1);
-    Items.mapitems.set('item_flask', -1);
-    Items.mapitems.set('item_faerie_fire', -1);
-    Items.mapitems.set('item_dust', -1);
-    Items.mapitems.set('item_tome_of_knowledge', -1);
-    Items.mapitems.set('item_enchanted_mango', -1);
-    Items.mapitems.set('item_smoke_of_deceit', -1);
+    // export let mapitems = new Map();
+    // mapitems.set('item_tango', -1);
+    // mapitems.set('item_clarity', -1);
+    // mapitems.set('item_flask', -1);
+    // mapitems.set('item_faerie_fire', -1);
+    // mapitems.set('item_dust', -1);
+    // // mapitems.set('item_tome_of_knowledge', -1);
+    // mapitems.set('item_enchanted_mango', -1);
+    // mapitems.set('item_smoke_of_deceit', -1);
     Items.items = [];
     Items.itemsboolen = [];
     for (let i = 0; i < Items.itemList.length; i++) {
@@ -167,27 +157,26 @@ var Items;
             }
         }
         Load.Init = Init;
-        function fastMove(backpack, item) {
-            if (Items.myHero.GetItem(item, true) && Items.mapitems.get(item) === -1) {
-                for (let i = 0; i < 6; i++) {
-                    if (Items.myHero.GetItemByIndex(i) && Items.myHero.GetItemByIndex(i).GetName() === item) {
-                        Items.aegisInd = i;
-                        Items.mapitems.set(item, i);
-                    }
-                }
-            }
-            if (!Items.myHero.GetItem(item, true) && Items.mapitems.get(item) !== -1) {
-                let max = 0;
-                for (let i = 1; i < backpack.length; i++) {
-                    if (backpack[max].GetCost() < backpack[i].GetCost()) {
-                        max = i;
-                    }
-                }
-                lib_1.moveItem(Items.myHero, backpack[max], Items.aegisInd);
-                Items.mapitems.set(item, -1);
-            }
-        }
-        Load.fastMove = fastMove;
+        // export function fastMove(backpack, item) {
+        //     if (Items.myHero.GetItem(item, true) && mapitems.get(item) === -1) {
+        //         for (let i = 0; i < 6; i++) {
+        //             if (Items.myHero.GetItemByIndex(i) && Items.myHero.GetItemByIndex(i).GetName() === item) {
+        //                 Items.aegisInd = i;
+        //                 mapitems.set(item, i);
+        //             }
+        //         }
+        //     }
+        //     if (!Items.myHero.GetItem(item, true) && mapitems.get(item) !== -1) {
+        //         let max = 0;
+        //         for (let i = 1; i < backpack.length; i++) {
+        //             if (backpack[max].GetCost() < backpack[i].GetCost()) {
+        //                 max = i;
+        //             }
+        //         }
+        //         moveItem(Items.myHero, backpack[max], Items.aegisInd);
+        //         mapitems.set(item, -1);
+        //     }
+        // }
     })(Load = Items.Load || (Items.Load = {}));
 })(Items || (Items = {}));
 items.OnUpdate = () => {
@@ -200,11 +189,11 @@ items.OnUpdate = () => {
                 backpack.push(item);
             }
         }
-        for (let i = 10; i < Items.itemsboolen.length; i++) {
-            if (Items.itemsboolen[i]) {
-                Items.Load.fastMove(backpack, Items.itemList[i]);
-            }
-        }
+        // for (let i = 10; i < Items.itemsboolen.length; i++) {
+        //     if (Items.itemsboolen[i]) {
+        //         Items.Load.fastMove(backpack, Items.itemList[i]);
+        //     }
+        // }
         // fastMove(backpack, 'item_');
         let inventory = Items.myHero.GetItems(true);
         for (let i of inventory) {
@@ -308,7 +297,7 @@ exports.IsTalant = IsTalant;
 
 /***/ }),
 
-/***/ 4:
+/***/ 1:
 /*!****************************!*\
   !*** multi ./src/items.ts ***!
   \****************************/
