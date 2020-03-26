@@ -81,14 +81,14 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/stopperBranch.ts":
+/***/ "./src/stopperbranch.ts":
 /*!******************************!*\
-  !*** ./src/stopperBranch.ts ***!
+  !*** ./src/stopperbranch.ts ***!
   \******************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -135,7 +135,7 @@ stopper.OnDraw = () => {
     if (Stopper.gameStart && Stopper.isEnabledValue) {
         let [x, y, screen] = Renderer.WorldToScreen(Stopper.myHero.GetAbsOrigin().add(new Vector(0, 0, Stopper.myHero.GetHealthBarOffset())));
         if (screen) {
-            Renderer.DrawText(Stopper.frontSmall, x, y, 'Enable');
+            Renderer.DrawText(Stopper.frontSmall, x + Stopper.xOffset.GetValue(), y + Stopper.yOffset.GetValue(), 'Enable');
         }
     }
 };
@@ -168,14 +168,14 @@ RegisterScript(stopper);
 
 /***/ }),
 
-/***/ 0:
+/***/ 1:
 /*!************************************!*\
-  !*** multi ./src/stopperBranch.ts ***!
+  !*** multi ./src/stopperbranch.ts ***!
   \************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\madaspe\AppData\Roaming\Minority\scripts\src\stopperBranch.ts */"./src/stopperBranch.ts");
+module.exports = __webpack_require__(/*! C:\Users\madaspe\AppData\Roaming\Minority\scripts\src\stopperbranch.ts */"./src/stopperbranch.ts");
 
 
 /***/ })
