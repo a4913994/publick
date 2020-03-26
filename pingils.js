@@ -143,7 +143,7 @@ pingIl.OnUpdate = () => {
         if (Engine.OnceAt(PingIl.speed)) {
             illusion.forEach(value => {
                 for (let i of PingIl.heroes) {
-                    if (i.GetUnitName() === value) {
+                    if (i.GetUnitName() === value && !i.IsDormant()) {
                         MiniMap.Ping(i.GetAbsOrigin(), Enum.PingType.NORMAL, false);
                     }
                 }
