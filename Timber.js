@@ -141,7 +141,6 @@ timber.OnUpdate = () => {
             pos.z = 0;
             posTimber.z = 0;
             ironwood.CastPosition(pos);
-            console.log(posTimber.Distance(pos));
             if (posTimber.Distance(pos) - 20 <= ironwood.GetCastRange()) {
                 Timber.myHero.GetAbilityByIndex(1).CastPosition(pos);
             }
@@ -152,7 +151,6 @@ timber.OnUpdate = () => {
             pos.z = 0;
             posTimber.z = 0;
             ironbranch.CastPosition(pos);
-            console.log(posTimber.Distance(pos));
             if (posTimber.Distance(pos) - 20 <= ironbranch.GetCastRange()) {
                 Timber.myHero.GetAbilityByIndex(1).CastPosition(pos);
             }
